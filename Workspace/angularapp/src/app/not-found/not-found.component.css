@@ -1,0 +1,9 @@
+.notFound-tag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 175px;
+}
+.goBack-tag{
+    margin-top: 10px;
+}
