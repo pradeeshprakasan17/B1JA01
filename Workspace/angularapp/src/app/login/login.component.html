@@ -1,41 +1,49 @@
-<div class="loginPage-container">
-    <div class="login-container">
-        <h2>Welcome to Amaze Pack!</h2>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <h3>LogIn</h3>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" class="form-control" type="email" placeholder="Enter Email" formControlName="email"
-                [class.is-invalid] = "email?.invalid && email?.touched">
-                <div *ngIf="email?.invalid && email?.touched" class="text-danger">
-                    <small *ngIf="emailcontrols?.['required']">Email is Required</small>
-                    <small *ngIf="emailcontrols?.['pattern']">Email is Invalid</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" class="form-control" type="password" placeholder="Enter Password" formControlName="password"
-                [class.is-invalid] = "password?.invalid && password?.touched">
-                <div *ngIf="password?.invalid && password?.touched" class="text-danger">
-                    <small *ngIf="passwordcontrols?.['required']">Password is Required</small>
-                    <small *ngIf="passwordcontrols?.['pattern']">
-                        Password should have atleast<br>
-                        *minimum 8 characters<br>
-                        *one capital letter, one small letter<br>
-                        *one number,one special character
-                    </small>
-                </div>
-            </div>
-
-            <div class="button-tag">
-                <button id="loginButton" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
-            </div>
-        
-        <div class="loginRouting-container">
-            <p class="login-nav"> New User ? 
-            <a id="signupLink" routerLink="/signup">Sign Up</a></p>
+<div>
+    <nav class="navbar navbar-expand-lg" style="background-color: blueviolet;">
+        <div class = " d-flex justify-content-center">
+        <h2 style="color:white" id = "h1">Welcome to Amaze Pack!</h2>
         </div>
-        </form>
-    </div>
+    </nav>
 </div>
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 " id="loginBox">
+                
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <h3 class="col-12 mb-4">Login here to continue.</h3>
+                    <div class="mb-5 col-12" >
+                        <div class="form-group">
+                            <input id="email" class="form-control" type="email" placeholder="Enter Email" formControlName="email"
+                            [class.is-invalid] = "email?.invalid && email?.touched">
+                            <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                                <small *ngIf="emailcontrols?.['required']">Email is Required</small>
+                                <small *ngIf="emailcontrols?.['pattern']">Email is Invalid</small>
+                            </div>
+                        </div><br>
+                        <div class="form-group">
+                            <input id="password" class="form-control" type="password" placeholder="Enter Password" formControlName="password"
+                            [class.is-invalid] = "password?.invalid && password?.touched">
+                            <div *ngIf="password?.invalid && password?.touched" class="text-danger">
+                                <small *ngIf="passwordcontrols?.['required']">Password is Required</small>
+                                <small *ngIf="passwordcontrols?.['pattern']">
+                                    Password should have atleast<br>
+                                    *minimum 8 characters<br>
+                                    *one capital letter, one small letter<br>
+                                    *one number,one special character
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-tag">
+                        <button id="loginButton" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+                    </div>
+                    <div class="col-12" >
+                        <h4 class="msg">New User ? <a id = "signupLink" routerLink = "/signup">Sign Up</a></h4>
+                    </div>
+                </form>
+            </div>
+            <div  class="col-lg-6 col-md-6 col-12" id="image">
+                <img src="../../assets/images/login-main.png" class="img-fluid" alt="Responsive image" >
+            </div>
+         </div>
+    </div>

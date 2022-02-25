@@ -1,71 +1,78 @@
-<div class="signUpPage-container">
-    <div class="signUpForm-container">
-    <h2>Register Here</h2>
+<div>
+    <nav class="navbar navbar-expand-lg" style="background-color: blueviolet;">
+        <div class = " d-flex justify-content-center">
+        <h2 style="color:white" id = "h1">Amaze Pack</h2>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-12 " id="signupBox">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <h4>Sign Up</h4>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" class="form-control" type="email" placeholder="Enter Email" formControlName="email"
-        [class.is-invalid] = "email?.invalid && email?.touched">
-        <div *ngIf="email?.invalid && email?.touched" class="text-danger">
-            <small *ngIf="emailcontrols?.['required']">Email is Required</small>
-            <small *ngIf="emailcontrols?.['pattern']">Email is Invalid</small>
-        </div>
-    </div>
+        <h3 class="col-12 mb-4">Signup here to continue.</h3>
+            <div class="mb-3 col-12" >
+                <div class="form-group">
+                    <input id="email" class="form-control" type="email" placeholder="Enter Email" formControlName="email"
+                    [class.is-invalid] = "email?.invalid && email?.touched">
+                    <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                        <small *ngIf="emailcontrols?.['required']">Email is Required</small>
+                        <small *ngIf="emailcontrols?.['pattern']">Email is Invalid</small>
+                    </div>
+                </div><br>
 
-    <div class="form-group">
-        <label for="'userName">User Name</label>
-        <input id="userName" class="form-control" type="text" placeholder="Enter User Name" formControlName="userName"
-        [class.is-invalid] = "userName?.invalid && userName?.touched">
-        <div *ngIf="userName?.invalid && userName?.touched" class="text-danger">
-            <small *ngIf="userNamecontrols?.['required']">Username is Required</small>
-            <small *ngIf="userNamecontrols?.['minlength']">Username should be atleast 3 characters</small>
-        </div>
-    </div>
+            <div class="form-group">
+                <input id="userName" class="form-control" type="text" placeholder="Enter User Name" formControlName="userName"
+                [class.is-invalid] = "userName?.invalid && userName?.touched">
+                <div *ngIf="userName?.invalid && userName?.touched" class="text-danger">
+                    <small *ngIf="userNamecontrols?.['required']">Username is Required</small>
+                    <small *ngIf="userNamecontrols?.['minlength']">Username should be atleast 3 characters</small>
+                </div>
+            </div><br>
 
-    <div class="form-group">
-        <label for="mobileNumber">Mobile Number</label>
-        <input id="mobileNumber" class="form-control" type="text" placeholder="Enter Mobile Number" formControlName="mobileNumber"
-        [class.is-invalid] = "mobileNumber?.invalid && mobileNumber?.touched" maxlength="10" (keypress)="onlyNumbersAllowed($event)">
-        <div *ngIf="mobileNumber?.invalid && mobileNumber?.touched" class="text-danger">
-            <small *ngIf="mobileNumbercontrols?.['required']">Mobile Number is Required</small>
-            <small *ngIf="mobileNumbercontrols?.['minlength']">Enter 10 digit mobile number</small>
-        </div>
-    </div>
+            <div class="form-group">
+                <input id="mobileNumber" class="form-control" type="text" placeholder="Enter Mobile Number" formControlName="mobileNumber"
+                [class.is-invalid] = "mobileNumber?.invalid && mobileNumber?.touched" maxlength="10" (keypress)="onlyNumbersAllowed($event)">
+                <div *ngIf="mobileNumber?.invalid && mobileNumber?.touched" class="text-danger">
+                    <small *ngIf="mobileNumbercontrols?.['required']">Mobile Number is Required</small>
+                    <small *ngIf="mobileNumbercontrols?.['minlength']">Enter 10 digit mobile number</small>
+                </div>
+            </div><br>
 
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input id="password" class="form-control" type="password" placeholder="Enter Password" formControlName="password"
-        [class.is-invalid] = "password?.invalid && password?.touched" (change)="onPasswordMatch()">
-        <div *ngIf="password?.invalid && password?.touched" class="text-danger">
-            <small *ngIf="passwordcontrols?.['required']">Password is Required</small>
-            <small *ngIf="passwordcontrols?.['pattern']">
-                Password should have atleast<br>
-                *minimum 8 characters<br>
-                *one capital letter, one small letter<br>
-                *one number,one special character
-            </small>
-        </div>
-    </div>
+            <div class="form-group">
+                <input id="password" class="form-control" type="password" placeholder="Enter Password" formControlName="password"
+                [class.is-invalid] = "password?.invalid && password?.touched" (change)="onPasswordMatch()">
+                <div *ngIf="password?.invalid && password?.touched" class="text-danger">
+                    <small *ngIf="passwordcontrols?.['required']">Password is Required</small>
+                    <small *ngIf="passwordcontrols?.['pattern']">
+                        Password should have atleast<br>
+                        *minimum 8 characters<br>
+                        *one capital letter, one small letter<br>
+                        *one number,one special character
+                    </small>
+                </div>
+            </div><br>
 
-    <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input id="confirmPassword" class="form-control" type="password" placeholder="Confirm Password" formControlName="confirmPassword"
-        [class.is-invalid] = "confirmPassword?.invalid && confirmPassword?.touched" (change)="onPasswordMatch()">
-        <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="text-danger">
-            <small *ngIf="confirmPasswordcontrols.errors?.['required']">Confirm Password is Required</small>
-            <small *ngIf="confirmPasswordcontrols.hasError('mismatch')">Confirm Password does not match.</small>
-        </div>
-    </div>
     
+
+            <div class="form-group">
+                <input id="confirmPassword" class="form-control" type="password" placeholder="Confirm Password" formControlName="confirmPassword"
+                [class.is-invalid] = "confirmPassword?.invalid && confirmPassword?.touched" (change)="onPasswordMatch()">
+                <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="text-danger">
+                    <small *ngIf="confirmPasswordcontrols.errors?.['required']">Confirm Password is Required</small>
+                    <small *ngIf="confirmPasswordcontrols.hasError('mismatch')">Confirm Password does not match.</small>
+            </div>
+        </div><br>
+    </div>
     <div class="button-tag">
         <button id="submitButton" [disabled]="!signUpForm.valid" class="btn btn-primary">Submit</button>
     </div>
+    <div class="col-12" >
+        <h4 class="msg">Already a User ? <a id = "logininLink" routerLink = "/login">Login</a></h4>
+    </div>
     </form>
 </div>
-
-    <div class="signUpRouting-container">
-        <p class="signUp-nav"> Already a User ? 
-        <a id="signinLink" routerLink="/login">LogIn</a></p>
-    </div>
+<div  class="col-lg-6 col-md-6 col-12" id="image">
+    <img src="../../assets/images/login-main.png" class="img-fluid" alt="Responsive image" >
+</div>
+</div>
 </div>

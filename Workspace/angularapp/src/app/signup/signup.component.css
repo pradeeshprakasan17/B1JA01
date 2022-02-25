@@ -1,3 +1,42 @@
-input.ng-touched.ng-invalid{
-    border : 2px solid red;
+input.ng-invalid.ng-touched{
+    border : 3px solid red;
+    background-image: none;
+    background-color: rgb(195, 161, 226);   
+}
+.container{
+    padding: 15px 15px;
+}
+#h2{
+    padding: 2px 2px;
+    font-style: italic;
+}
+#signupBox{
+    margin-top: 6vh;
+}
+#email,#userName,#mobileNumber, #password, #confirmPassword {
+    height: 7vh;
+    background-image: linear-gradient(to right, white,rgb(157, 76, 233));
+}
+.button-tag{
+    text-align: center;
+}
+#submitButton{
+    background-color: rgb(82, 4, 155);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+.msg{
+    margin-top: 2vh;
+    text-align: center;
+}
+a{
+    color: blueviolet;
+    text-decoration: none;
+}
+#image{
+    margin-top: 8vh; 
+}
+#h1{
+    margin-left: 20px;
 }

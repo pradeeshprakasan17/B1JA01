@@ -6,4 +6,9 @@
 }
 .goBack-tag{
     margin-top: 10px;
+    background-color: rgb(82, 4, 155);
+    border-color: rgb(82, 4, 155);
+}
+#back-tag{
+   background-color: rgb(82, 4, 155); 
 }
