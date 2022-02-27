@@ -10,9 +10,9 @@ export class SignupComponent implements OnInit {
 
   constructor(private formbuilder: FormBuilder) { }
 
-  emailRegex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
+emailRegex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
-  passwordRegex ="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#$^!%*?&])[A-Za-z\d$@#$^!%*?&].{7,15}";
+passwordRegex ="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#$^!%*?&])[A-Za-z\d$@#$^!%*?&].{7,15}";
   
 signUpForm = this.formbuilder.group({
 email: ['',[Validators.required,Validators.pattern(this.emailRegex)]],
@@ -79,7 +79,7 @@ get confirmPasswordcontrols(){
 return this.signUpForm.controls['confirmPassword'];
 }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+}
 
 }
