@@ -7,7 +7,9 @@ export class SignupService {
 
   constructor(private http:HttpClient) { }
 
+  url = 'http://localhost:8080/signup';
+
   signupRegister(userData : any){
-    return this.http.post<any>('http://localhost:8080/signup', userData);
+    return this.http.post<any>(this.url, userData);
   }
 }
