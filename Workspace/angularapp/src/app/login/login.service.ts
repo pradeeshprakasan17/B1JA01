@@ -9,7 +9,7 @@ export class LoginService {
 
   url = 'http://localhost:8080/login';
 
-  loginService(userData : any){
-    return this.http.post<any>(this.url, userData);
+  loginService(loginData : any){
+    return this.http.post<any>(this.url, loginData);
   }
 }
