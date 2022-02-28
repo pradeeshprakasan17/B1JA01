@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,7 @@ import { FormBuilder,Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private formbuilder: FormBuilder) { }
+constructor(private formbuilder: FormBuilder,private signUpService: SignupService) { }
 
 emailRegex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
@@ -25,6 +26,12 @@ confirmPassword:['',Validators.required]
 onSubmit(){
 console.log(this.signUpForm.value);
 alert("SignUp Successful!!!");
+
+this.signUpService.signupRegister(this.signUpForm.value)
+.subscribe(
+    response => console.log('Success!', response),
+    error => console.log('Error!', error)
+);
 }
 
 onPasswordMatch() {
@@ -38,10 +45,10 @@ this.confirmPasswordcontrols.setErrors({ mismatch: true });
 
 onlyNumbersAllowed(event : any):boolean{
 const charCode = (event.which)?event.which: event.keyCode;
-if(charCode > 31 && (charCode < 48 || charCode >57)){
-return false;
-}
-return true;
+  if(charCode > 31 && (charCode < 48 || charCode >57)){
+    return false;
+  } 
+    return true;
 }
 
 get email(){
