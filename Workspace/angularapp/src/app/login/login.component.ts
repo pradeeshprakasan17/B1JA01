@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
-
+import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +8,7 @@ import { FormBuilder,Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formbuilder: FormBuilder) {}
+  constructor(private formbuilder: FormBuilder,private loginService: LoginService) {}
   emailRegex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
   passwordRegex ="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#$^!%*?&])[A-Za-z\d$@#$^!%*?&].{7,15}";
@@ -20,6 +20,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     console.log(this.loginForm.value);
+
+    this.loginService.loginService(this.loginForm.value)
+.subscribe(
+    response => console.log('Success!', response),
+    error => console.log('Error!', error)
+);
   }
 
   get email(){

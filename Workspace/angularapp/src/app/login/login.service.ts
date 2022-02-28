@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class SignupService {
+export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  url = 'http://localhost:8080/signup';
+  url = 'http://localhost:8080/login';
 
-  signupService(userData : any){
+  loginService(userData : any){
     return this.http.post<any>(this.url, userData);
   }
 }

@@ -25,9 +25,8 @@ confirmPassword:['',Validators.required]
 
 onSubmit(){
 console.log(this.signUpForm.value);
-alert("SignUp Successful!!!");
 
-this.signUpService.signupRegister(this.signUpForm.value)
+this.signUpService.signupService(this.signUpForm.value)
 .subscribe(
     response => console.log('Success!', response),
     error => console.log('Error!', error)
