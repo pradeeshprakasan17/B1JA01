@@ -13,7 +13,7 @@ input.ng-invalid.ng-touched{
 #signupBox{
     margin-top: 6vh;
 }
-#email,#userName,#mobileNumber, #password, #confirmPassword {
+#email,#username,#mobileNumber, #password, #confirmPassword {
     height: 7vh;
     background-image: linear-gradient(to right, white,rgb(157, 76, 233));
 }
