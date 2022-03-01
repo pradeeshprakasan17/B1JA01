@@ -21,7 +21,7 @@
                 </div><br>
 
             <div class="form-group">
-                <input id="userName" class="form-control" type="text" placeholder="Enter User Name" formControlName="userName"
+                <input id="username" class="form-control" type="text" placeholder="Enter User Name" formControlName="username"
                 [class.is-invalid] = "userName?.invalid && userName?.touched">
                 <div *ngIf="userName?.invalid && userName?.touched" class="text-danger">
                     <small *ngIf="userNamecontrols?.['required']">Username is Required</small>

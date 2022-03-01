@@ -17,7 +17,7 @@ passwordRegex ="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#$^!%*?&])[A-Za-z\d$@#$
   
 signUpForm = this.formbuilder.group({
 email: ['',[Validators.required,Validators.pattern(this.emailRegex)]],
-userName:['',[Validators.required,Validators.minLength(3)]],
+username:['',[Validators.required,Validators.minLength(3)]],
 mobileNumber:['',[Validators.required,Validators.minLength(10)]],
 password:['',[Validators.required,Validators.pattern(this.passwordRegex)]],
 confirmPassword:['',Validators.required]
@@ -58,10 +58,10 @@ return this.signUpForm.controls['email'].errors;
 }
 
 get userName(){
-return this.signUpForm.get('userName');
+return this.signUpForm.get('username');
 }
 get userNamecontrols(){
-return this.signUpForm.controls['userName'].errors;
+return this.signUpForm.controls['username'].errors;
 }
 
 get mobileNumber(){
