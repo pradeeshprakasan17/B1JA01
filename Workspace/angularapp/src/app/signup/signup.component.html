@@ -43,7 +43,7 @@
                 [class.is-invalid] = "password?.invalid && password?.touched" (change)="onPasswordMatch()">
                 <div *ngIf="password?.invalid && password?.touched" class="text-danger">
                     <small *ngIf="passwordcontrols?.['required']">{{errorMessage.password.required}}</small>
-                    <small *ngIf="passwordcontrols?.['pattern']">
+                    <small *ngIf="passwordcontrols?.['pattern'] && password?.value!='admin'">
                         {{errorMessage.password.pattern}}<br>{{errorMessage.password.line1}}<br>
                         {{errorMessage.password.line2}}<br>{{errorMessage.password.line3}}<br>
                     </small>
